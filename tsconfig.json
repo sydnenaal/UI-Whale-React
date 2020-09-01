@@ -6,9 +6,11 @@
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
-    "declaration": true
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "skipLibCheck": true
   },
   "exclude": ["node_modules", "lib"],
-
   "include": ["**/*.ts", "**/*.tsx"]
 }
