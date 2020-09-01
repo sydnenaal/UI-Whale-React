@@ -7,7 +7,9 @@ Craft UI components for my and your projects
 ```
 $ npm i erokhin-ui-kit-react
 ```
-or if you using yarn:
+
+or if you use yarn:
+
 ```
 $ yarn add erokhin-ui-kit-react
 ```
