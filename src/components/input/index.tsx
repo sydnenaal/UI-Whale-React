@@ -1,7 +1,13 @@
 import * as React from "react";
 
-import { Props } from "./props";
 import "./style.sass";
+
+export interface Props {
+  onChange?: (e: React.ChangeEvent) => void;
+  type?: string;
+  placeholder?: string;
+  name?: string;
+}
 
 const Input: React.FC<Props> = ({
   type = "text",

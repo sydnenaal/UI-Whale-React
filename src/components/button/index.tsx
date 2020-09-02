@@ -2,6 +2,7 @@ import * as React from "react";
 import clsx from "clsx";
 
 import "./style.sass";
+import { useRipple } from "./hooks/useRipple";
 
 interface Props {
   onClick?: (e: React.MouseEvent) => void;
@@ -10,25 +11,6 @@ interface Props {
   className?: string;
   rippleDelay?: number;
 }
-
-const useRipple = (delay: number) => {
-  const [position, setPosition] = React.useState<Object>();
-  const [isRippleVisible, setIsRippleVisible] = React.useState<boolean>(false);
-
-  React.useEffect(() => {
-    setIsRippleVisible(true);
-  }, [position]);
-
-  React.useEffect(() => {
-    if (isRippleVisible) {
-      setTimeout(() => {
-        setIsRippleVisible(false);
-      }, delay);
-    }
-  }, [isRippleVisible, delay]);
-
-  return { setPosition, position, isRippleVisible };
-};
 
 const Button: React.FC<Props> = ({
   children,
@@ -41,9 +23,7 @@ const Button: React.FC<Props> = ({
 
   const classNames = clsx(["erokhin-ui-button", className]);
 
-  const handleClickWithRipple = (
-    e: React.MouseEvent<HTMLButtonElement>
-  ): void => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     if (!isRippleVisible) {
       const x = e.clientX - e.currentTarget.offsetLeft;
       const y = e.clientY - e.currentTarget.offsetTop;
@@ -56,7 +36,7 @@ const Button: React.FC<Props> = ({
   };
 
   return (
-    <button onClick={handleClickWithRipple} className={classNames}>
+    <button onClick={handleClick} className={classNames}>
       {isRippleVisible && <span style={position}></span>}
       {label || children}
     </button>

@@ -1,6 +1,6 @@
 {
   "name": "erokhin-ui-kit-react",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "UI kit for my react projects",
   "author": "Erokhin Dmitriy <dimasymbain@gmail.com>",
   "main": "./lib/main.bundle.js",
