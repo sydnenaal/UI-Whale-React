@@ -1,4 +1,4 @@
-## UI Whale
+## Erokhin-ui-kit-react
 
 Craft UI components for my and your projects
 
