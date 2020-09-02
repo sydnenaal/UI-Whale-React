@@ -1,38 +1,16 @@
-import React from "react";
+import React, { MouseEvent, memo } from "react";
 import clsx from "clsx";
 
+import { useRipple } from "./hooks/useRipple";
 import "./style.sass";
 
 interface Props {
-  onClick?: (e: React.MouseEvent) => void;
+  onClick?: (e: MouseEvent) => void;
   children?: string;
   label?: string;
   className?: string;
   rippleDelay?: number;
 }
-
-export const useRipple = (delay: number) => {
-  const [position, setPosition] = React.useState({ top: "", left: "" });
-  const [isRippleVisible, setIsRippleVisible] = React.useState(false);
-
-  React.useEffect(() => {
-    setIsRippleVisible(true);
-  }, [position]);
-
-  React.useEffect(() => {
-    if (isRippleVisible) {
-      const interval = setTimeout(() => {
-        setIsRippleVisible(false);
-      }, delay);
-
-      return () => {
-        clearInterval(interval);
-      };
-    }
-  }, [isRippleVisible, delay]);
-
-  return { setPosition, position, isRippleVisible };
-};
 
 const Button = ({
   children,
@@ -45,7 +23,7 @@ const Button = ({
 
   const classNames = clsx(["erokhin-ui-button", className]);
 
-  const handleClickWithRipple = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     if (!isRippleVisible) {
       const x = e.clientX - e.currentTarget.offsetLeft;
       const y = e.clientY - e.currentTarget.offsetTop;
@@ -59,11 +37,11 @@ const Button = ({
   };
 
   return (
-    <button onClick={handleClickWithRipple} className={classNames}>
+    <button onClick={handleClick} className={classNames}>
       {isRippleVisible && <span style={position}></span>}
       {label || children}
     </button>
   );
 };
 
-export default React.memo(Button);
+export default memo(Button);
