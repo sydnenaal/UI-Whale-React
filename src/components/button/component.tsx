@@ -1,8 +1,7 @@
-import * as React from "react";
+import React from "react";
 import clsx from "clsx";
 
 import "./style.sass";
-import { useRipple } from "./hooks/useRipple";
 
 interface Props {
   onClick?: (e: React.MouseEvent) => void;
@@ -12,21 +11,45 @@ interface Props {
   rippleDelay?: number;
 }
 
-const Button: React.FC<Props> = ({
+export const useRipple = (delay: number) => {
+  const [position, setPosition] = React.useState({ top: "", left: "" });
+  const [isRippleVisible, setIsRippleVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsRippleVisible(true);
+  }, [position]);
+
+  React.useEffect(() => {
+    if (isRippleVisible) {
+      const interval = setTimeout(() => {
+        setIsRippleVisible(false);
+      }, delay);
+
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [isRippleVisible, delay]);
+
+  return { setPosition, position, isRippleVisible };
+};
+
+const Button = ({
   children,
   onClick,
   label,
   className,
   rippleDelay = 600,
-}) => {
+}: Props) => {
   const { setPosition, position, isRippleVisible } = useRipple(rippleDelay);
 
   const classNames = clsx(["erokhin-ui-button", className]);
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
+  const handleClickWithRipple = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!isRippleVisible) {
       const x = e.clientX - e.currentTarget.offsetLeft;
       const y = e.clientY - e.currentTarget.offsetTop;
+
       setPosition({ top: `${y}px`, left: `${x}px` });
     }
 
@@ -36,7 +59,7 @@ const Button: React.FC<Props> = ({
   };
 
   return (
-    <button onClick={handleClick} className={classNames}>
+    <button onClick={handleClickWithRipple} className={classNames}>
       {isRippleVisible && <span style={position}></span>}
       {label || children}
     </button>

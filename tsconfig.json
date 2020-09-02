@@ -9,7 +9,8 @@
     "declaration": true,
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "esModuleInterop": true
   },
   "exclude": ["node_modules", "lib"],
   "include": ["**/*.ts", "**/*.tsx"]
