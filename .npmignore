@@ -1,3 +1,4 @@
 /tsconfig.json
 /webpack.config.json
 /yarn.lock
+/babel.config.js
