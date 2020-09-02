@@ -7,8 +7,8 @@
     "jsx": "react",
     "allowJs": true,
     "declaration": true,
+    "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
     "skipLibCheck": true
   },
   "exclude": ["node_modules", "lib"],

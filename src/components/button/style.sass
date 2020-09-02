@@ -5,8 +5,10 @@
     min-width: 35px
     padding-left: 20px
     padding-right: 20px
+    padding-top: 10px
+    padding-bottom: 10px
     width: auto
-    height: 40px
+    height: auto
     font-family: 'Work Sans', sans-serif
     font-weight: 500
     font-size: 1rem
@@ -15,12 +17,32 @@
     outline: none
     box-shadow: 3px 3px 5px rgba(0,0,0, 0.2) 
     cursor: pointer
-    transition: border 0.5s ease
+    transition: border .5s ease
     will-change: box-shadow
     background: #5cbdb9
+    position: relative
+    overflow: hidden
 
     &:hover
         border: 1px solid rgba(0,0,0,0.3)
 
-    &:active
-        box-shadow: 1px 1px 5px rgba(0,0,0, 0.2)
+    & span 
+        position: absolute
+        background: #fff
+        transform: translate(-50%, -50%)
+        pointer-events: none
+        border-radius: 50%
+        animation: ripple .6s linear
+            
+
+@keyframes ripple
+    0%
+        width: 0px
+        height: 0px
+        opacity: .3
+        
+    100%
+        width: 500px
+        height: 500px
+        opacity: 0
+        

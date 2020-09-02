@@ -1,6 +1,6 @@
 {
   "name": "erokhin-ui-kit-react",
-  "version": "0.0.6",
+  "version": "0.0.12",
   "description": "UI kit for my react projects",
   "author": "Erokhin Dmitriy <dimasymbain@gmail.com>",
   "main": "./lib/main.bundle.js",
@@ -18,6 +18,9 @@
     "build": "webpack --mode production",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "clsx": "^1.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.5",
@@ -52,8 +55,5 @@
   "bugs": {
     "url": "https://github.com/sydnenaal/Erokhin-ui-kit-react/issues"
   },
-  "homepage": "https://github.com/sydnenaal/Erokhin-ui-kit-react",
-  "dependencies": {
-    "clsx": "^1.1.1"
-  }
+  "homepage": "https://github.com/sydnenaal/Erokhin-ui-kit-react"
 }

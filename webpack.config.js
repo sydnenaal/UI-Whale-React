@@ -15,6 +15,9 @@ module.exports = {
     globalObject: "this",
     umdNamedDefine: true,
   },
+  externals: {
+    react: "commonjs react",
+  },
   module: {
     rules: [
       {
