@@ -7,16 +7,18 @@ import Button from "../components/button";
 export default {
   title: "Example/Button",
   component: Button,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
+  argTypes: {},
 } as Meta;
 
 const Template: Story = (args: any) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  primary: true,
   label: "Button",
   children: "button",
+  size: "normal",
+  disabled: false,
+  isLoading: false,
+  compact: false,
+  circular: false,
 };

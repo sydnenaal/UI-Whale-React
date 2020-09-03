@@ -17,7 +17,7 @@ describe("Button component", () => {
     it("should render button with default props", () => {
       const { container } = getButton();
 
-      expect(container.querySelector(".erokhin-ui-button")).toBeDefined();
+      expect(container.querySelector(".whale-ui-button")).toBeDefined();
     });
 
     it("should render button with label", () => {
@@ -51,7 +51,7 @@ describe("Button component", () => {
 
       const { container } = getButton({ onClick: mockCallBack });
 
-      fireEvent.click(container.querySelector(".erokhin-ui-button"));
+      fireEvent.click(container.querySelector(".whale-ui-button"));
 
       expect(mockCallBack.mock.calls.length).toBe(1);
     });
@@ -61,16 +61,16 @@ describe("Button component", () => {
 
       const { container } = getButton();
 
-      fireEvent.click(container.querySelector(".erokhin-ui-button"));
+      fireEvent.click(container.querySelector(".whale-ui-button"));
 
       expect(mockCallBack.mock.calls.length).toBe(0);
     });
 
-    it("should call handleClickWithRipple", async () => {
+    it("should call handleClick", async () => {
       const { container } = getButton();
       const span = container.querySelector("span");
 
-      fireEvent.click(container.querySelector(".erokhin-ui-button"));
+      fireEvent.click(container.querySelector(".whale-ui-button"));
 
       expect(span).toBeDefined();
 
