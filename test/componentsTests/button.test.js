@@ -6,8 +6,8 @@ import {
 } from "@testing-library/react";
 import { renderHook, act } from "@testing-library/react-hooks";
 
-import Button from "./component";
-import { useRipple } from "./hooks/useRipple";
+import Button from "../../src/components/button";
+import { useRipple } from "../../src/components/button/hooks/useRipple";
 
 const getButton = (props) => render(<Button {...props} />);
 const DEFAULT_POSITION = { top: "9px", left: "36px" };

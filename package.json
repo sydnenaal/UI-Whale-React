@@ -67,7 +67,7 @@
     "clearMocks": true,
     "collectCoverage": true,
     "setupFilesAfterEnv": [
-      "./config/setupTest.js"
+      "./test/config/setupTest.js"
     ],
     "transform": {
       "^.+\\.js$": "babel-jest",
