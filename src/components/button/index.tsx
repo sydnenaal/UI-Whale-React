@@ -21,7 +21,7 @@ const Button = ({
 }: Props) => {
   const { setPosition, position, isRippleVisible } = useRipple(rippleDelay);
 
-  const classNames = clsx(["erokhin-ui-button", className]);
+  const classNames = clsx(["whale-ui-button", className]);
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     if (!isRippleVisible) {
