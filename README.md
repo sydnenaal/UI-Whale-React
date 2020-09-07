@@ -13,3 +13,7 @@ or if you use yarn:
 ```
 $ yarn add erokhin-ui-kit-react
 ```
+
+## Licence
+
+MIT © Erokhin Dmitriy

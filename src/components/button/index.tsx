@@ -15,10 +15,11 @@ interface Props {
   disabled?: boolean;
   compact?: boolean;
   circular?: boolean;
+  fullWidth?: boolean;
   size?: Size;
 }
 
-const Button = ({
+function Button({
   children,
   onClick,
   label,
@@ -28,18 +29,19 @@ const Button = ({
   disabled = false,
   compact = false,
   circular = false,
+  fullWidth = false,
   size = "normal",
-}: Props) => {
+}: Props) {
   const { setPosition, position, isRippleVisible } = useRipple(rippleDelay);
 
   const classNames = clsx([
     "whale-ui-button",
     size,
     className,
-    { disabled, compact, circular, loading: isLoading },
+    { disabled, compact, circular, fullWidth, loading: isLoading },
   ]);
 
-  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+  function handleClick(e: MouseEvent<HTMLButtonElement>) {
     if (disabled || isLoading) {
       e.preventDefault();
       return;
@@ -55,7 +57,7 @@ const Button = ({
     if (onClick) {
       onClick(e);
     }
-  };
+  }
 
   return (
     <button onClick={handleClick} className={classNames}>
@@ -63,6 +65,6 @@ const Button = ({
       {isLoading ? "Loading..." : label || children}
     </button>
   );
-};
+}
 
 export default memo(Button);

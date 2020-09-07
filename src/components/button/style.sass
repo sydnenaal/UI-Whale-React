@@ -22,6 +22,33 @@
     position: relative
     overflow: hidden
 
+    &.fullWidth
+        width: 100%
+        
+    &.disabled 
+        opacity: 0.7
+
+    &.circular
+        border-radius: 50%
+        padding: 0px
+        width: 50px
+        height: 50px
+
+    &.small
+        font-size: .7rem
+
+    &.normal
+        font-size: 1rem
+
+    &.big
+        font-size: 1.3rem
+
+    &.compact
+        padding-left: 15px
+        padding-right: 15px
+        padding-top: 5px
+        padding-bottom: 5px
+
     &:hover
         border: 1px solid rgba(0,0,0,0.4)
 
@@ -33,29 +60,7 @@
         border-radius: 50%
         animation: ripple .6s linear
             
-.disabled 
-    opacity: 0.7
 
-.circular
-    border-radius: 50%
-    padding: 0px
-    width: 50px
-    height: 50px
-
-.small
-    font-size: .7rem
-
-.normal
-    font-size: 1rem
-
-.big
-    font-size: 1.3rem
-
-.compact
-    padding-left: 15px
-    padding-right: 15px
-    padding-top: 5px
-    padding-bottom: 5px
 
 @keyframes ripple
     0%

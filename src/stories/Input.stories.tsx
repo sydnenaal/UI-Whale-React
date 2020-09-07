@@ -2,24 +2,21 @@ import * as React from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import Button from "../components/button";
+import Input from "../components/input";
 
 export default {
-  title: "Example/Button",
-  component: Button,
+  title: "Example/Input",
+  component: Input,
   argTypes: {},
 } as Meta;
 
-const Template: Story = (args: any) => <Button {...args} />;
+const Template: Story = (args: any) => <Input {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: "Button",
-  children: "button",
+  label: "Label",
   size: "normal",
-  disabled: false,
-  isLoading: false,
-  compact: false,
-  circular: false,
   fullWidth: false,
+  disabled: false,
+  compact: false,
 };

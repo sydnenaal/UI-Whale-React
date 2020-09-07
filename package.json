@@ -1,6 +1,6 @@
 {
-  "name": "erokhin-ui-kit-react",
-  "version": "0.0.16",
+  "name": "ui-whale-react",
+  "version": "0.0.17",
   "description": "UI kit for my react projects",
   "author": "Erokhin Dmitriy <dimasymbain@gmail.com>",
   "main": "./lib/main.bundle.js",
@@ -85,10 +85,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sydnenaal/Erokhin-ui-kit-react"
+    "url": "https://github.com/sydnenaal/UI-Whale-react"
   },
   "bugs": {
-    "url": "https://github.com/sydnenaal/Erokhin-ui-kit-react/issues"
+    "url": "https://github.com/sydnenaal/UI-Whale-react/issues"
   },
-  "homepage": "https://github.com/sydnenaal/Erokhin-ui-kit-react"
+  "homepage": "https://github.com/sydnenaal/UI-Whale-react"
 }
