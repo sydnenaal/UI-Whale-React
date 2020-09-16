@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  render,
-  fireEvent,
-  waitForElementToBeRemoved,
-} from "@testing-library/react";
-import { renderHook, act } from "@testing-library/react-hooks";
+import { render, fireEvent } from "@testing-library/react";
 
 import Input from "./index";
 
@@ -90,6 +85,7 @@ describe("Input component", () => {
       fireEvent.focus(container.querySelector("input"));
 
       expect(mockCallBack.mock.calls.length).toBe(1);
+      expect(container.querySelector(".focus")).toHaveClass("focus");
     });
 
     it("should call handleBlur without onFocus", () => {
